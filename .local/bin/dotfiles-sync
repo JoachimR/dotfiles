@@ -15,6 +15,7 @@ $DOTFILES add -u
 # Check for staged changes
 if ! $DOTFILES diff --cached --quiet; then
     $DOTFILES commit -m "auto-sync: $(date '+%Y-%m-%d')"
+    $DOTFILES pull --rebase origin main
     $DOTFILES push
     echo "dotfiles: synced $(date)"
 else

@@ -1,0 +1,29 @@
+[user]
+	name = Joachim Reiss
+	email = reiss@bryter.io
+[init]
+	defaultBranch = main
+[rerere]
+	enabled = true
+[core]
+	autocrlf = input
+	editor = nvim
+  pager=delta
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true
+  side-by-side = true
+  line-numbers = true
+  light = false
+
+
+[merge]
+  conflictstyle = diff3
+  tool = nvimdiff
+  prompt = false
+
+[diff]
+  colorMoved = default

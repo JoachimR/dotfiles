@@ -1,0 +1,22 @@
+#!/bin/bash
+# Auto-sync dotfiles: commit and push if there are changes
+
+DOTFILES="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
+# Check if remote is configured
+if ! $DOTFILES remote get-url origin &>/dev/null; then
+    echo "dotfiles: no remote configured, skipping push"
+    exit 0
+fi
+
+# Stage only already-tracked files
+$DOTFILES add -u
+
+# Check for staged changes
+if ! $DOTFILES diff --cached --quiet; then
+    $DOTFILES commit -m "auto-sync: $(date '+%Y-%m-%d')"
+    $DOTFILES push
+    echo "dotfiles: synced $(date)"
+else
+    echo "dotfiles: nothing to sync"
+fi

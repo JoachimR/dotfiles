@@ -1,0 +1,25 @@
+{
+  "statusLine": {
+    "type": "command",
+    "command": "input=$(cat); echo \"$(echo \"$input\" | jq -r '.workspace.project_dir')\""
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "git rev-parse --is-inside-work-tree > /dev/null 2>&1 && git add . || true"
+          }
+        ]
+      }
+    ]
+  },
+  "spinnerVerbs": {
+    "mode": "replace",
+    "verbs": [
+      "Working"
+    ]
+  }
+}

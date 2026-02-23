@@ -1,0 +1,97 @@
+"" Source your .vimrc
+" source ~/.vimrc
+" source ~/.config/nvim/init.vim
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+" set scrolloff=25
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+
+
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+set highlightedyank
+
+" nnoremap <up> <nop>
+" nnoremap <left> <nop>
+" nnoremap <right> <nop>
+" nnoremap <down> <nop>
+
+set incsearch
+" set nohlsearch
+" nnoremap <c-h> :set hlsearch!<cr>
+
+
+xnoremap p "_dP
+vnoremap p "_dP
+
+inoremap jj <Esc>
+inoremap kk <Esc>
+inoremap bb <Esc>
+
+" disable sounds when navigating files via vim
+set visualbell
+set noerrorbells
+
+nnoremap VV V$%
+nnoremap TT @q
+
+nnoremap vm v$
+nnoremap ym y$
+
+
+set scrolloff=16
+
+
+
+" nnoremap <C-d> <C-d>zz
+" nnoremap <C-u> <C-u>zz
+
+
+
+set textwidth=0
+" set wrapmargin=0
+" set wrap
+
+
+nnoremap <C-d> 8jj
+nnoremap <C-u> 8kk
+
+vnoremap <C-d> 8jj
+vnoremap <C-u> 8kk
+
+
+:set ignorecase
+:set smartcase
+
+
+nnoremap n nzz
+
+
+" go to after the selection after yanking selection
+vnoremap y ygv<Esc>
+
+" set number relativenumber
+" set nu rnu
+
+
+
+noremap <S-l> :bnext<cr>
+noremap <S-h> :bprevious<cr>
+

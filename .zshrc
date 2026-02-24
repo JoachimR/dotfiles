@@ -1,6 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
-DISABLE_AUTO_TITLE="true"
+
 
 plugins=(git aws)
 
@@ -29,12 +29,6 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-
-# Set terminal window title to current directory
-precmd_set_title() {
-  print -Pn "\e]0;%~\a"
-}
-add-zsh-hook precmd precmd_set_title
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8

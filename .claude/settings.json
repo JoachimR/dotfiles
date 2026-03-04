@@ -1,4 +1,10 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(git *)",
+      "Bash(glab *)"
+    ]
+  },
   "hooks": {
     "PostToolUse": [
       {

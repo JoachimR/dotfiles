@@ -7,6 +7,17 @@
     ]
   },
   "hooks": {
+    "Notification": [
+      {
+        "matcher": "tool_use",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Claude Code needs your attention\" with title \"Claude Code\"'"
+          }
+        ]
+      }
+    ],
     "PostToolUse": [
       {
         "matcher": "Edit|Write",
@@ -31,5 +42,6 @@
     "verbs": [
       "Working"
     ]
-  }
+  },
+  "effortLevel": "medium"
 }

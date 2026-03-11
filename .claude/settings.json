@@ -27,6 +27,24 @@
             "command": "git rev-parse --is-inside-work-tree > /dev/null 2>&1 && git add . || true"
           }
         ]
+      },
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/joachimreiss/.claude/hooks/save-plan-path.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "ExitPlanMode",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/joachimreiss/.claude/hooks/open-plan-chrome.sh"
+          }
+        ]
       }
     ]
   },
@@ -43,5 +61,5 @@
       "Working"
     ]
   },
-  "effortLevel": "medium"
+  "effortLevel": "high"
 }

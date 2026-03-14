@@ -7,17 +7,7 @@
     ]
   },
   "hooks": {
-    "Notification": [
-      {
-        "matcher": "tool_use",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "osascript -e 'display notification \"Claude Code needs your attention\" with title \"Claude Code\"'"
-          }
-        ]
-      }
-    ],
+    "Notification": [],
     "PostToolUse": [
       {
         "matcher": "Edit|Write",
@@ -27,22 +17,15 @@
             "command": "git rev-parse --is-inside-work-tree > /dev/null 2>&1 && git add . || true"
           }
         ]
-      },
+      }
+    ],
+    "PreToolUse": [
       {
-        "matcher": "Write",
+        "matcher": "Bash",
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/joachimreiss/.claude/hooks/save-plan-path.sh"
-          }
-        ]
-      },
-      {
-        "matcher": "ExitPlanMode",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/Users/joachimreiss/.claude/hooks/open-plan-chrome.sh"
+            "command": "/Users/joachimreiss/.claude/hooks/rtk-rewrite.sh"
           }
         ]
       }
@@ -52,14 +35,14 @@
     "type": "command",
     "command": "input=$(cat); dir=$(echo \"$input\" | jq -r '.workspace.project_dir'); model=$(echo \"$input\" | jq -r '.model.display_name'); branch=$(git --git-dir=\"$dir/.git\" symbolic-ref --short HEAD 2>/dev/null); if [ -n \"$branch\" ]; then echo \"$model in $dir [$branch]\"; else echo \"$model in $dir\"; fi"
   },
-  "enabledPlugins": {
-    "ralph-loop@claude-plugins-official": true
-  },
+  "enabledPlugins": {},
   "spinnerVerbs": {
     "mode": "replace",
     "verbs": [
       "Working"
     ]
   },
-  "effortLevel": "medium"
+  "alwaysThinkingEnabled": false,
+  "effortLevel": "medium",
+  "model": "opus"
 }

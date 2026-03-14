@@ -6,3 +6,5 @@
 
 ## TypeScript
 - Do not create `index.ts` barrel/re-export files — import directly from the source file where the item is defined
+
+@RTK.md

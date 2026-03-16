@@ -6,6 +6,7 @@
       "Bash(glab:*)"
     ]
   },
+  "model": "opus[1m]",
   "hooks": {
     "Notification": [],
     "PostToolUse": [
@@ -43,6 +44,5 @@
     ]
   },
   "alwaysThinkingEnabled": false,
-  "effortLevel": "medium",
-  "model": "opus"
+  "effortLevel": "medium"
 }

@@ -6,7 +6,6 @@
       "Bash(glab:*)"
     ]
   },
-  "model": "opus[1m]",
   "hooks": {
     "Notification": [],
     "PostToolUse": [

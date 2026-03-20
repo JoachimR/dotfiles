@@ -35,7 +35,9 @@
     "type": "command",
     "command": "input=$(cat); dir=$(echo \"$input\" | jq -r '.workspace.project_dir'); model=$(echo \"$input\" | jq -r '.model.display_name'); branch=$(git --git-dir=\"$dir/.git\" symbolic-ref --short HEAD 2>/dev/null); if [ -n \"$branch\" ]; then echo \"$model in $dir [$branch]\"; else echo \"$model in $dir\"; fi"
   },
-  "enabledPlugins": {},
+  "enabledPlugins": {
+    "ralph-loop@claude-plugins-official": true
+  },
   "spinnerVerbs": {
     "mode": "replace",
     "verbs": [

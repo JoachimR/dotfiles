@@ -54,5 +54,6 @@
     ]
   },
   "alwaysThinkingEnabled": false,
-  "effortLevel": "high"
+  "effortLevel": "high",
+  "skipDangerousModePermissionPrompt": true
 }

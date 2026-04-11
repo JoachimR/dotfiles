@@ -72,3 +72,6 @@ alias deletebranch="git push origin --delete $1"
 
 # save clipboard to /Desktop/aaa.bryter
 alias ooo="~/bin/save_clipboard.sh"
+
+# copy latest screenshot to clipboard
+alias mmm="~/bin/copy_latest_screenshot.sh"

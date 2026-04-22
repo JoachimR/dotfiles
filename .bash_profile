@@ -67,6 +67,9 @@ alias gitlog="git log -n 20 --graph --decorate --abbrev-commit --format=format:'
 
 # delete remote branch
 alias deletebranch="git push origin --delete $1"
+
+# list my open gitlab merge requests
+alias mrs="~/bin/my-mrs.sh"
 . "/Users/joachimreiss/.deno/env"
 
 

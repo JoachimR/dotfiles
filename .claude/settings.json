@@ -47,6 +47,7 @@
   "alwaysThinkingEnabled": false,
   "effortLevel": "high",
   "skipDangerousModePermissionPrompt": true,
+  "editorMode": "vim",
   "skipAutoPermissionPrompt": true,
-  "editorMode": "vim"
+  "model": "sonnet"
 }

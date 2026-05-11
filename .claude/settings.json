@@ -48,7 +48,7 @@
   "alwaysThinkingEnabled": false,
   "effortLevel": "high",
   "skipDangerousModePermissionPrompt": true,
-  "theme": "light",
+  "theme": "auto",
   "editorMode": "vim",
   "skipAutoPermissionPrompt": true
 }

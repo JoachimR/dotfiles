@@ -46,3 +46,15 @@ esac
 
 # Dotfiles bare repo alias
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# Interactive rebase over all commits on this branch since origin/main
+gri() {
+  git pull --rebase || return
+  local count
+  count=$(git rev-list --count origin/main..HEAD) || return
+  if [[ "$count" -eq 0 ]]; then
+    echo "gri: no commits ahead of origin/main" >&2
+    return 1
+  fi
+  git rebase -i "HEAD~$count" "$@"
+}

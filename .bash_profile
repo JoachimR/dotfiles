@@ -68,8 +68,8 @@ alias gitlog="git log -n 20 --graph --decorate --abbrev-commit --format=format:'
 # delete remote branch
 alias deletebranch="git push origin --delete $1"
 
-# list my open gitlab merge requests
-alias mrs="~/bin/my-mrs.sh"
+# list my open gitlab merge requests (Vue app)
+alias mrs="(curl -sf http://localhost:5173 > /dev/null && open http://localhost:5173) || (cd ~/workspace/mrs-app && pnpm dev --open &)"
 . "/Users/joachimreiss/.deno/env"
 
 

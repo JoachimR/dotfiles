@@ -41,6 +41,5 @@
   "skipDangerousModePermissionPrompt": true,
   "theme": "dark",
   "editorMode": "vim",
-  "skipAutoPermissionPrompt": true,
-  "model": "sonnet"
+  "skipAutoPermissionPrompt": true
 }

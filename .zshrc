@@ -58,3 +58,6 @@ gri() {
   fi
   git rebase -i "HEAD~$count" "$@"
 }
+
+
+export HOMEBREW_RYTER_ACCESS_TOKEN="glpat-NW9LQyPx8KNxISBlJh4NcmM6MQpvOjEKdToxYnE0ZA8.01.171pfxi8f"

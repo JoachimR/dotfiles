@@ -49,6 +49,9 @@ alias aaa="git add . && git commit --amend --no-edit --no-verify && git push -f"
 # git: stash all, checkout to main, remove all local branches, pull
 alias sss='git stash && git checkout main && git pull && `git branch | grep -v "main" | xargs git branch -D` ; pnpm install'
 
+# like sss, but clears the terminal afterwards
+alias xxx='sss && clear'
+
 # git: unstash and add
 alias pop='git stash pop && git add . && gst'
 

@@ -81,3 +81,6 @@ alias ooo="~/bin/save_clipboard.sh"
 
 # copy latest screenshot to clipboard
 alias mmm="~/bin/copy_latest_screenshot.sh"
+
+# run claude with sonnet model
+sonnet(){ claude --model sonnet }

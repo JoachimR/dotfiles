@@ -12,7 +12,7 @@ end
 
 config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
 config.font = wezterm.font("JetBrainsMono Nerd Font")
-config.font_size = 13
+config.font_size = 11
 config.hide_tab_bar_if_only_one_tab = true
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 
@@ -22,7 +22,6 @@ config.window_padding = {
 	top = 0,
 	bottom = 0,
 }
-
 
 -- config.window_decorations = "RESIZE"
 

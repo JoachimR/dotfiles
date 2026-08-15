@@ -46,7 +46,7 @@
     ]
   },
   "alwaysThinkingEnabled": false,
-  "effortLevel": "low",
+  "effortLevel": "high",
   "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
   "skipWorkflowUsageWarning": true,

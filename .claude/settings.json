@@ -52,5 +52,48 @@
   "skipWorkflowUsageWarning": true,
   "theme": "dark",
   "editorMode": "vim",
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "autoMode": {
+    "environment": [
+      "### Org-wide",
+      "**Organization**: BRYTER (GitLab group `ryter`, repo `ryter/ryter`)",
+      "**Cloud provider(s)**: AWS (via `aws secretsmanager` marker in config)",
+      "**Repository visibility**: assume private — remote host is gitlab.com and gh-based visibility check was not queryable (non-github host); no evidence of public visibility",
+      "**Internal sharing / snippet hosting**: Notion (bryter.notion.site, referenced in README) — treat as internal-cleared destination for this repo's own docs only; other public paste/gist services remain outside the trust boundary",
+      "**Secrets management**: AWS Secrets Manager (`aws secretsmanager` marker); local secret-adjacent files gitignored (`.envrc`, `ui-integration-tests/credentials-cypress-tests.js`, `infrastructure/.env`)",
+      "**Default / protected branches**: `main` (default branch); protection status not queryable via gh (non-github remote) — treat `main` as protected by convention (MR workflow, ",
+      " Delete source branch",
+      "never commit to main",
+      "never amend/squash/force-push",
+      "norms in skills)",
+      "**CI/CD deploy targets**: GitLab CI pipelines to QA review apps (`app.<mr-id>.qa.bryter.dev`), staging (`qa.stage.bryter.io`), and production — `ci-pipelines/deployment/prod/prod.yml` and `infrastructure/datadog/Pulumi.env-prod.yaml` indicate a distinct prod deploy path",
+      "**Network posture**: None configured",
+      "**Source control**: GitLab — this repo (`gitlab.com:ryter/ryter.git`) and its `origin` remote only",
+      "**Trusted internal domains**: `*.qa.bryter.dev` (review apps), `qa.stage.bryter.io` (staging), `gitlab.com` (source control + CI), `linear.app` / `uploads.linear.app` (issue tracking)",
+      "**Trusted cloud buckets**: None configured",
+      "**Key internal services**: GitLab (`gitlab.com/ryter/ryter`), Linear (issue tracking, PLA/MAR-prefixed tickets), Datadog (error tracking, referenced in `fix-error` skill)",
+      "**Internal package registry**: gitlab.com (package registry host from config scan) — used for pnpm workspace / GitLab package registry",
+      "**Sensitive data locations & audiences**: `editor-server/src/application-management/sanitize-pii.ts` and its test (PII handling logic); `infrastructure/integrations/recover-secrets/recover_secrets.py` and its test (secrets recovery); `infrastructure/.env`; `infrastructure/datadog/Pulumi.env-prod.yaml`; `infrastructure/review-apps/kubernetes/authoring-keycloak.template.yml` — share only with engineers cleared for production secrets/PII handling",
+      "**Data retention / declassification**: None configured",
+      "**Sensitive remote targets**: any namespace/host/container with `prod`/`production` as a whole segment — includes `ci-pipelines/deployment/prod/prod.yml`, `infrastructure/datadog/Pulumi.env-prod.yaml`, `editor-server/tsconfig.prod.json`",
+      "**Protected deployment namespaces / environments**: `prod` (per `ci-pipelines/deployment/prod/`); GitLab feature-flag environment scopes — production stays off by default per `add-release-toggle` skill; QA (`qa/do-not-remove`, `qa/mr-<id>`) and staging scopes are routine, non-prod",
+      "**Protected IaC scopes**: IAM, RBAC, networking, quota, and node-pool resources; anything tagged `prod`/`production` — includes Pulumi stacks under `infrastructure/` targeting prod (e.g. `Pulumi.env-prod.yaml`)",
+      "### User-specific",
+      "**Primary use of Claude Code**: software development (frontend Vue/TypeScript, Kotlin backend, GitLab MR workflows, feature-flag/release-toggle management, production error triage via Datadog→Linear→MR)",
+      "**Trusted repo**: this repo (`/Users/joachimreiss/workspace/eee/4/ryter`) and its `origin` remote (`gitlab.com:ryter/ryter.git`)",
+      "**Org-specific CLIs**: `glab` (GitLab CLI, 214× in-project + 6× shell history), `rtk` (referenced in user CLAUDE.md import and shell history), `playwright-cli` (61×, UI testing)",
+      "**routine under this repo's `.claude/` prefix**: skills and agents (e.g. `fix-error`, `grill-to-tested`, `add-release-toggle`, `gitlab-mr-reviewer`) are routine, previously-reviewed workflow tooling"
+    ],
+    "allow": [
+      "$defaults",
+      "Bash(glab mr view*)",
+      "Bash(glab mr diff*)",
+      "Bash(playwright-cli:*)"
+    ],
+    "soft_deny": [
+      "$defaults",
+      "Bash(glab api*feature_flags*--method POST*)",
+      "Bash(glab api*feature_flags*--method DELETE*)"
+    ]
+  }
 }

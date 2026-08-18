@@ -7,6 +7,7 @@
     ],
     "defaultMode": "auto"
   },
+  "model": "claude-fable-5[1m]",
   "hooks": {
     "PostToolUse": [
       {
@@ -46,7 +47,7 @@
     ]
   },
   "alwaysThinkingEnabled": false,
-  "effortLevel": "high",
+  "effortLevel": "low",
   "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
   "skipWorkflowUsageWarning": true,
@@ -54,6 +55,17 @@
   "editorMode": "vim",
   "skipAutoPermissionPrompt": true,
   "autoMode": {
+    "allow": [
+      "$defaults",
+      "Bash(glab mr view*)",
+      "Bash(glab mr diff*)",
+      "Bash(playwright-cli:*)"
+    ],
+    "soft_deny": [
+      "$defaults",
+      "Bash(glab api*feature_flags*--method POST*)",
+      "Bash(glab api*feature_flags*--method DELETE*)"
+    ],
     "environment": [
       "### Org-wide",
       "**Organization**: BRYTER (GitLab group `ryter`, repo `ryter/ryter`)",
@@ -83,17 +95,6 @@
       "**Trusted repo**: this repo (`/Users/joachimreiss/workspace/eee/4/ryter`) and its `origin` remote (`gitlab.com:ryter/ryter.git`)",
       "**Org-specific CLIs**: `glab` (GitLab CLI, 214× in-project + 6× shell history), `rtk` (referenced in user CLAUDE.md import and shell history), `playwright-cli` (61×, UI testing)",
       "**routine under this repo's `.claude/` prefix**: skills and agents (e.g. `fix-error`, `grill-to-tested`, `add-release-toggle`, `gitlab-mr-reviewer`) are routine, previously-reviewed workflow tooling"
-    ],
-    "allow": [
-      "$defaults",
-      "Bash(glab mr view*)",
-      "Bash(glab mr diff*)",
-      "Bash(playwright-cli:*)"
-    ],
-    "soft_deny": [
-      "$defaults",
-      "Bash(glab api*feature_flags*--method POST*)",
-      "Bash(glab api*feature_flags*--method DELETE*)"
     ]
   }
 }

@@ -86,3 +86,6 @@ alias mmm="~/bin/copy_latest_screenshot.sh"
 
 # run claude with sonnet model
 sonnet(){ claude --model sonnet }
+
+# run claude with sonnet model on /implement-cheap with a prompt argument
+cheap(){ claude --model sonnet "/implement-cheap $*" }

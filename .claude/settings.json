@@ -105,5 +105,6 @@
       "**routine under this repo's `.claude/` prefix**: skills and agents (e.g. `fix-error`, `grill-to-tested`, `add-release-toggle`, `gitlab-mr-reviewer`) are routine, previously-reviewed workflow tooling"
     ]
   },
-  "model": "sonnet"
+  "model": "sonnet",
+  "outputStyle": "Concise"
 }

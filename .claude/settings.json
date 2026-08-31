@@ -39,6 +39,7 @@
     "ralph-loop@claude-plugins-official": true,
     "datadog@claude-plugins-official": true
   },
+  "outputStyle": "Concise",
   "feedbackDrafts": "off",
   "spinnerVerbs": {
     "mode": "replace",
@@ -104,7 +105,5 @@
       "**Org-specific CLIs**: `glab` (GitLab CLI, 214× in-project + 6× shell history), `rtk` (referenced in user CLAUDE.md import and shell history), `playwright-cli` (61×, UI testing)",
       "**routine under this repo's `.claude/` prefix**: skills and agents (e.g. `fix-error`, `grill-to-tested`, `add-release-toggle`, `gitlab-mr-reviewer`) are routine, previously-reviewed workflow tooling"
     ]
-  },
-  "model": "sonnet",
-  "outputStyle": "Concise"
+  }
 }
